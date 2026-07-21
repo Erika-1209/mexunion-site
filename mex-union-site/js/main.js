@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (form) {
     form.addEventListener('submit', (e) => {
-      e.preventDefault();
+      
 
       const nome = form.nome.value.trim();
       const telefone = form.telefone.value.trim();
@@ -121,17 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Encaminha para o WhatsApp com os dados preenchidos (sem backend próprio)
-      const texto = `Olá, Mex Union! Meu nome é ${nome}.%0AE-mail: ${email}%0ATelefone: ${telefone}%0A${mensagem ? 'Mensagem: ' + mensagem : ''}`;
-      const whatsappUrl = `https://wa.me/5511994490682?text=${texto}`;
-
-      formNote.textContent = 'Recebemos sua solicitação! Redirecionando para o WhatsApp...';
-      formNote.style.color = '#0B1E3D';
-
-      setTimeout(() => {
-        window.open(whatsappUrl, '_blank', 'noopener');
-        form.reset();
-      }, 900);
+   formNote.textContent = 'Enviando sua solicitação...';
+formNote.style.color = '#0B1E3D';
     });
   }
 
