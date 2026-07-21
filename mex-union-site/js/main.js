@@ -123,6 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
    formNote.textContent = 'Enviando sua solicitação...';
 formNote.style.color = '#0B1E3D';
+
+       form.submit();
     });
   }
 
